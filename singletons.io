@@ -1,5 +1,5 @@
-// The way to create a Singleton in io is cloning and object and then creating a local clone method that shadows Object.clone
-// This local clone method should just return its object
+// To create a Singleton, clone an object and then shadow Object.clone with a method that just returns the object itself
+// This works because accessing values and calling anonymous functions are called via the same message passing interface
 Highlander := Object clone
 Highlander clone := Highlander
 

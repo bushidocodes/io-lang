@@ -1,3 +1,4 @@
+// Add ancestors slot to Object containing a method 
 Object ancestors := method(
     prototype := self proto
     if (prototype != Object) then(

@@ -4,7 +4,10 @@
 
 // While Loop
 i := 1
-while (i <= 11, i println; i = i + 1)
+while (i <= 11, (
+    i println; 
+    i = i + 1;
+))
 "This one goes up to 11" println
 
 // For Loop
@@ -25,14 +28,14 @@ if (false,
     "It is false"
 ) println
 
-if (true) then(
+if true then (
     "It is true" println
-) else(
+) else (
     "It is false" println
 )
 
-if (false) then(
-    "It is true" println
-) else(
-    "It is false" println
-)
+// if (false) then(
+//     "It is true" println
+// ) else(
+//     "It is false" println
+// )

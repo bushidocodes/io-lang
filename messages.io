@@ -1,35 +1,35 @@
 // Everything but comment markers and the comma is a message in io
 // A message has three components: a sender, a target, and arguments
 
-"Post Office is: " print
-postOffice := Object clone println
+postOffice := Object clone 
+writeln("Post Office is: ", postOffice)
 
-// call gives up meta information about a message
+// call allows us to inspect the incoming message calling the method
+postOffice inspectMessage := method(
+    writeln("Post Office got a message from: ", call sender)
+    writeln("Post Office got a message with target: ", call target)
+    writeln("Post Office got a message with name: ", call message name)
+    writeln("Post Office got a message with arguments: ", call message arguments)
+)
+postOffice packageSender := method(
+    writeln("Post Office got a message from: ", call sender)
+)
+postOffice messageTarget := method(
+    writeln("Post Office got a message with a target of: ", call target)
+)
+postOffice messageArgs := method(
+    writeln("Post Office got a message with arguments: ", call message arguments)
+)
+postOffice messageName := method(
+    writeln("Post Office got a message with name: ", call message name)
+)
 
-// Whenever the post office receives the message packageSender, print the message sender to the screen
-postOffice packageSender := method("Post Office got a message from: " print; call sender println)
-
-"Mailer is: " print
-mailer := Object clone println
-mailer deliver := method(postOffice packageSender)
-
+mailer := Object clone
+writeln("Mailer is: ", mailer)
+mailer deliver := method(postOffice inspectMessage("one", 2, :three))
 
 mailer deliver
 
-// Whenever the post office receives the message messageTarget, print the message target to the screen
-// This will be the ID of the post office
-postOffice messageTarget := method("Post Office got a message with a target of: " print; call target println)
-
-postOffice messageTarget
-
-
-// Get the message name and arguments
-postOffice messageArgs := method(call message arguments println)
-postOffice messageName := method(call message name println)
-
-postOffice messageArgs("one", 2, :three)
-
-postOffice messageName
 
 unless := method(
     (call sender doMessage(call message argAt(0))) ifFalse(

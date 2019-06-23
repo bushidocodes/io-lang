@@ -1,19 +1,20 @@
 elvis := Map clone
 
-// Setting a Key
+// Setting some K-V Pairs
 elvis atPut("home", "Graceland")
+elvis atPut("style", "Rock & Roll")
 
 // Retrieving the Value associated with a key
-elvis at("home") print writeln
-
-elvis atPut("style", "Rock & Roll")
+writeln(elvis at("home"))
 
 // Casting a Map to an Object
 elvis asObject print writeln
 
 // Casting a Map to a list of tuples
-elvis asList print writeln
+writeln(elvis asList)
 
-elvis keys print writeln
+// List keys
+writeln(elvis keys)
 
-elvis size print writeln
+// Number of K-V Pairs
+writeln(elvis size)

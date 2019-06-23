@@ -3,28 +3,23 @@
 // io seems to be strongly typed
 // I can't implicity mix types
 
-1 type print
-1.1 type print
-my_num := 1 /2
-my_num print
-writeln
-(1 + 1) print
-writeln
+writeln(1 type)
+writeln(1.1 type)
+my_num := 1 / 2
+writeln(my_num)
+writeln(1 + 1) 
 
 // 1 + "one" print
 // writeln
 
 // Is 0 true or false?
-"true and 0? " print
-(true and 0) print writeln
-
+writeln("true and 0? ", true and 0)
 
 // Is an empty string true or false?
-"true and ''? " print
-(true and "") print writeln
+writeln("true and ''? ", true and "")
 
 // How can you tell what slots a prototype supports?
-Lobby slotNames print writeln
+writeln(Lobby slotNames)
 
 
 // What is the difference between = := and ::=? When would you use each one?
@@ -38,7 +33,7 @@ thingie = "nutin"
 Student := Object clone
 Student name ::= nil
 Student address ::= nil
-Student greet := method("Hi!" print writeln)
+Student greet := method(writeln("Hi!"))
 new_student := Student clone setName("Sean") setAddress("Camellia st.")
-new_student name print writeln
+writeln(new_student name) 
 new_student greet
