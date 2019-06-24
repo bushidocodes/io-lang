@@ -1,7 +1,3 @@
-// How would you change / to return 0 if the denominator is zero
-
-// OperatorTable println
-
 Number getSlot("/") println
 Number newSlot("/", method(one, two, three,
     writeln("from: ", call sender)
@@ -11,8 +7,4 @@ Number newSlot("/", method(one, two, three,
     writeln(one, two three)
     return 
 ))
-// writeln(getSlot("/"))
-
-// Number getSlo
-
 num := 2 /(3)

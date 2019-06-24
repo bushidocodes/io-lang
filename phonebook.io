@@ -3,8 +3,10 @@ OperatorTable addAssignOperator(":", "atPutNumber")
 
 // Fires whenever the parser encounters curly brackets
 curlyBrackets := method (
+  writeln("Parsing curly brackets")
   r := Map clone
   call message arguments foreach(arg, 
+    writeln("An arg: ", arg)
     r doMessage(arg)
   )
   r
