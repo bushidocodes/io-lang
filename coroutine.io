@@ -1,20 +1,20 @@
-vizzini := Object clone
-vizzini talk := method(
-  "Fezzik, are there rocks ahead?" println
+odd := Object clone
+odd numbers := method(
+  1 println
   yield
-  "No more rhymes now. I mean it." println
+  3 println
   yield
 )
 
-fezzik := Object clone
-fezzik rhyme := method(
+even := Object clone
+even numbers := method(
   yield
-  "If there are, we'll all be dead." println
+  2 println
   yield
-  "Anybody want a peanut?" println
+  4 println
 )
 
-vizzini @@talk 
-fezzik @@rhyme
+odd @@numbers 
+even @@numbers
 
 Coroutine currentCoroutine pause

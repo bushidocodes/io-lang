@@ -30,7 +30,8 @@ mailer deliver := method(postOffice inspectMessage("one", 2, :three))
 
 mailer deliver
 
-
+postOffice inspectMessage("one", 2, :three)
+postOffice inspectMessage
 unless := method(
     (call sender doMessage(call message argAt(0))) ifFalse(
         call sender doMessage(call message argAt(1))
