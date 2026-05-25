@@ -16,13 +16,6 @@ Run any `.io` file:
 bash run.sh helloWorld.io
 ```
 
-## Running natively on macOS
-
-```sh
-brew install io
-io helloWorld.io
-```
-
 ## Notes
 
 Io now uses a WebAssembly (WASI) build system. The Docker image builds Io from source at
