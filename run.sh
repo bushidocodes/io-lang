@@ -1,1 +1,1 @@
-docker run --rm -v $(pwd):/src spmcbride1201/io io /src/$1
+MSYS_NO_PATHCONV=1 docker run --rm -v "$(pwd -W):/src" -w //src io-lang io "$1"
