@@ -47,7 +47,7 @@ Matrix serializeToCsv := method(
 
 Matrix deserializeFromCsv := method(lines,
   x := lines size
-  y := lines at(0) split(", ") size println
+  y := lines at(0) split(", ") size
 
   newMatrix := Matrix clone
   newMatrix dim(x,y)
