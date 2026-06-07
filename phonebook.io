@@ -20,7 +20,7 @@ curlyBrackets := method (
   r
 )
 
-s := File with("phonebook.json") openForReading contents
+s := File with("phonebook.txt") openForReading contents
 // doString evaluates text as Io source code
 phoneNumbers := doString(s)
 
