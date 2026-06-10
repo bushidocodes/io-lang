@@ -52,19 +52,7 @@ For those that are also interested in computer architecture, assembly languages,
 I'm considering these books for future projects and blog posts.
 
 ## Easiest way to explore io
-The io website offer recent packages on their site, but it seems that they have lagged a bit behind source. I decided to Dockerize the interpreter based off the latest x64 debian binary, so if you're running Docker, you're more than welcome to fork my repo at....
-
-## Impressions of the Language
-
-, I see a 20110905 timestamp.
-
-Prototype based language like Lua or JavaScript
-
-Receivers on the Left
-
-Messages on the right
-Messages return objects
-Messages take optional parameters in parantheses
+The io website offer recent packages on their site, but it seems that they have lagged a bit behind source. I decided to Dockerize the interpreter based off the latest x64 debian binary, so if you're running Docker, you're more than welcome to fork my repo on GitHub.
 
 ## Interesting io Links
 - Official IO page - https://iolanguage.org/
