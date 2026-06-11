@@ -40,11 +40,11 @@ Vehicle type print writeln // Vehicle has prototype Object
 Object type print writeln // Object has prototype Object
 "\n==================\n" print
 
-// From the point of view of an object, the prototype inheritance chain to a singly-linked linked list that terminates in a
+// From the point of view of an object, the prototype inheritance chain is a singly-linked list that terminates in a
 // object that has itself as its type. This is typically the base Object prototype
 
 // From the point of view of the language, prototypal inheritance is a forest of trees,
-// each with directed edges pointing upwards from leaves a root, wich is an object with itself as its type
+// each with directed edges pointing upwards from leaves to a root, which is an object with itself as its type
 
 // Let's extend the chain further
 Car := Vehicle clone
