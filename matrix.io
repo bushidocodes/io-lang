@@ -13,7 +13,7 @@ Matrix dim := method(x,y, (
 
 Matrix set := method(x,y,val, (
   self _data at(x) atPut(y, val)
-  get(x,y)
+  self get(x,y)
 ))
 
 Matrix get := method(x,y, (
