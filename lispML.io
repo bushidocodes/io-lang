@@ -94,10 +94,10 @@ SGMLBuilder forward := method(
     arg,
     // If this is interpreted as a function, this recursively calls the function on SGMLBuilder, which should trigger forward() and template out SGML elements, returning nil.
     content := self doMessage(arg);
-    // If this isn't interpreted as a funciton, content will be something other than nil, and we need to execute the appropriate parser
+    // If this isn't interpreted as a function, content will be something other than nil, and we need to execute the appropriate parser
     if (content != nil) then (
       if(content type == "Sequence") then (
-        self writeText(content) // Writes out test inside of SGML Tags
+        self writeText(content) // Writes out text inside of SGML Tags
       ) elseif(content type == "List") then (
         self writeList(content) // Given an Io list of strings, generates HTML UL and LI tags
       ) else (
