@@ -7,8 +7,9 @@ randomNumber := Random value(0,100) ceil
 guess := 99
 while (remainingTries > 0,(
   writeln("You have ", remainingTries, " remaining")
-  guess := File standardInput readLine asNumber
-  if (guess isNil,
+  inputLine := File standardInput readLine
+  guess := if (inputLine isNil, nil, inputLine asNumber)
+  if (guess isNil or guess isNan,
     writeln("Please enter a number.")
   ,
     newDiff := (guess - randomNumber) abs
