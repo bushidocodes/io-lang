@@ -1,6 +1,7 @@
 remainingTries := 10
 difference := 100
-randomNumber := Random value(0,100) ceil
+// Random addon is not available in the WASM build; use microsecond time as a low-quality seed
+randomNumber := (Date clone now asNumber * 1000000) floor % 100 + 1
 "Welcome to the Io Guessing Game" println
 "Enter a Number between 1 and 100" println
 
@@ -8,8 +9,9 @@ guess := 99
 while (remainingTries > 0,(
   writeln("You have ", remainingTries, " remaining")
   inputLine := File standardInput readLine
-  guess := if (inputLine isNil, nil, inputLine asNumber)
-  if (guess isNil or guess isNan,
+  if (inputLine isNil, break)
+  guess := inputLine asNumber
+  if (guess isNan,
     writeln("Please enter a number.")
   ,
     newDiff := (guess - randomNumber) abs
