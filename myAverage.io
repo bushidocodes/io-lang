@@ -4,6 +4,7 @@ List myAverage := method(
       Exception raise("Cannot take average on list with non-numerics")
     )
   )
+  if (size == 0, Exception raise("Cannot take average of empty list"))
   (sum / size)
 )
 
