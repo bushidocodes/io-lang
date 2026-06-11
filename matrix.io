@@ -59,10 +59,6 @@ Matrix deserializeFromCsv := method(lines,
     ) 
   )
   newMatrix
-
-  // self _data map(innerlist, (
-  //   innerlist join(", ")
-  // )) join("\n")
 )
 
 myMatrix := Matrix clone 
