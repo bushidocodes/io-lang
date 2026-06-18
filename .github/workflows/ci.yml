@@ -1,0 +1,26 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Io runtime Docker image
+        run: docker build -t io-lang .
+
+      - name: Smoke-test helloWorld.io
+        run: docker run --rm -v "$PWD:/src" -w /src io-lang io helloWorld.io
+
+      - name: Smoke-test fibonacci.io
+        run: docker run --rm -v "$PWD:/src" -w /src io-lang io fibonacci.io
+
+      - name: Smoke-test coroutine.io
+        run: docker run --rm -v "$PWD:/src" -w /src io-lang io coroutine.io
+
+      - name: Run all .io scripts
+        run: |
+          for f in *.io; do
+            echo "--- $f ---"
+            docker run --rm -v "$PWD:/src" -w /src io-lang io "$f" || exit 1
+          done
